@@ -2,13 +2,8 @@ const express = require("express");
 const app = express();
 const porta = 8080;
 const connection = require("./database/database");
-
-// connection.authenticate()
-//         .then(()=>{
-//             console.log("Conexão com o banco de dados realizada com sucesso.")
-//         }).catch((error) => {
-//             res.render("index")
-//         })
+const categoriesController = require('./categories/CategoriesController');
+const articlesController = require('./articles/ArticlesController')
 
 connection.authenticate()
 .then(() => {
@@ -25,8 +20,9 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
+app.use('/', categoriesController)  
 
-
+app.use('/', articlesController)
 
 app.get("/", (req, res) => {
     // res.send("Bem vindo ao meu site");
