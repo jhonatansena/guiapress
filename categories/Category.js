@@ -11,4 +11,5 @@ const Category = connection.define('categories', {
     }
 });
 
+// Category.sync({force: true})//essa linha deve ser removida após o projeto mapear o banco de dados com taabelas e relacionamentos
 module.exports = Category;
