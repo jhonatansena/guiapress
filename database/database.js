@@ -5,8 +5,8 @@ require('dotenv/config');
 const connection = new Sequelize(process.env.DATA_BASE, 
    process.env.USERNAME, process.env.PASSWORD,
  {
-    dialect: 'mysql',
-    host:'localhost',
+    dialect: process.env.DIALECT,
+    host: process.env.HOST,
     logging: false
  }
 );
