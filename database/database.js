@@ -1,6 +1,9 @@
 const Sequelize = require('sequelize');
+require('dotenv/config');
 
-const connection = new Sequelize('guiapress', 'root', 'root',
+
+const connection = new Sequelize(process.env.DATA_BASE, 
+   process.env.USERNAME, process.env.PASSWORD,
  {
     dialect: 'mysql',
     host:'localhost',
