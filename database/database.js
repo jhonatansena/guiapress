@@ -7,7 +7,8 @@ const connection = new Sequelize(process.env.DATA_BASE,
  {
     dialect: process.env.DIALECT,
     host: process.env.HOST,
-    logging: false
+    logging: false,
+    timezone: "-03:00"
  }
 );
 
