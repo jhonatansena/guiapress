@@ -13,7 +13,7 @@
             <input class="form-control" name="title" value="<%= article.title %>" type="text"  placeholder="Defina o título do artigo">
             <input type="hidden" name="id" value="<%= article.id %>" >            <br>
             <textarea class="form-control"  name="body"   placeholder="Escreva seu artigo" id="article">
-              <%= article.body %>
+              <%- article.body %>
             </textarea>
             <br>
             <label for="">Categoria</label>
