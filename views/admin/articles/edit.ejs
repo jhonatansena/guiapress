@@ -18,9 +18,9 @@
             <br>
             <label for="">Categoria</label>
            <select name="category" class="form-control">
-              <% categories.forEach((category) => { %>
-                  <option value="<%= category.id %>"><%= category.title %></option>
-              <% }) %>
+            <% categories.forEach((category) => { %>
+              <option value="<%=category.id%>" <%= category.id === article.categoryId ? "selected" : '' %>><%= category.title %></option>
+            <% }) %>
           </select>
             <br>
             <button class="btn btn-success">Atualizar</button>
