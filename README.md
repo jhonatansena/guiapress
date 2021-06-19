@@ -5,7 +5,7 @@
 
 * [Node.js](https://nodejs.org/en/)
 * [Bootstrap](https://getbootstrap.com)
-* [Mysql] (https://www.mysql.com/)
+* [Mysql](https://www.mysql.com/)
 * [Express](https://expressjs.com/)
 * [EJS](https://ejs.co/)
 * [Sequelize](https://sequelize.org/)
