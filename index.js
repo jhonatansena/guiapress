@@ -4,9 +4,11 @@ const porta = 8080;
 const connection = require("./database/database");
 const categoriesController = require('./categories/CategoriesController');
 const articlesController = require('./articles/ArticlesController')
+const usersController = require('./users/UsersController')
 
 const Article = require("./articles/Article")
 const Category = require("./categories/Category")
+const User = require('./users/User')
 
 connection.authenticate()
 .then(() => {
@@ -24,8 +26,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 app.use('/', categoriesController)  
-
 app.use('/', articlesController)
+app.use('/', usersController)
 
 app.get("/", (req, res) => {
 Article.findAll({
