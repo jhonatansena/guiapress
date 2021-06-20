@@ -3,6 +3,14 @@ const router = express.Router();
 const User = require("./User");
 const bcrypt = require('bcrypt');
 
+router.get("/admin/users", (req, res) => {
+
+    User.findAll().then(users => {
+        res.render("admin/users/index", {users: users});
+    })
+    
+})
+
 router.get("/admin/users/create", (req, res) => {
     res.render("admin/users/create");
 })
@@ -11,12 +19,14 @@ router.post("/users/create", (req, res) => {
     var email = req.body.email;
     var password = req.body.password;
 
-    User.findOnde({
+    User.findOne({
         where: {
             email: email
         }
     }).then(user => {
-        if(email != undefined){
+        
+    
+    if(user == undefined){
 
 
     var salt = bcrypt.genSaltSync(10);
@@ -26,9 +36,9 @@ router.post("/users/create", (req, res) => {
             password: hash
 
         }).then(() => {
-            res.redirect("/")
+            res.redirect("/admin/users")
         }).catch((err) => {
-            res.redirect("/")
+            res.redirect("/admin/users")
         })
 
         }else{
