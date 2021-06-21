@@ -5,6 +5,7 @@ const connection = require("./database/database");
 const categoriesController = require('./categories/CategoriesController');
 const articlesController = require('./articles/ArticlesController')
 const usersController = require('./users/UsersController')
+const session = require('express-session')
 
 const Article = require("./articles/Article")
 const Category = require("./categories/Category")
@@ -18,6 +19,9 @@ connection.authenticate()
     console.log(msgErro)
 })
 
+app.use(session({
+    secret: "piratariaehcrime", cookie: {maxAge: 30000}
+}))
 app.set('view engine', 'ejs')
 
 app.use(express.static('public'));
