@@ -54,6 +54,10 @@ router.get("/login", (req, res) => {
     res.render("admin/users/login")
 })
 
+router.get("/admin", (req, res) => {
+    res.render("admin/index")
+})
+
 router.post("/authenticate", (req, res) => {
     var email = req.body.email;
     var password = req.body.password;
@@ -68,8 +72,8 @@ router.post("/authenticate", (req, res) => {
                     id: user.id,
                     email: user.email
                 }
-                res.json(req.session.user)
 
+                res.json(req.session.user)
             }else{
                 res.redirect("/login")
             }

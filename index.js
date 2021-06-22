@@ -20,7 +20,7 @@ connection.authenticate()
 })
 
 app.use(session({
-    secret: "piratariaehcrime", cookie: {maxAge: 30000}
+    secret: "piratariaehcrime", cookie: {maxAge: 3000000}
 }))
 app.set('view engine', 'ejs')
 
